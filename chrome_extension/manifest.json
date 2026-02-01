@@ -1,38 +1,37 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Translate",
     "description": "Become Mr. Worldwide with LingoLive!",
     "version": "1.0",
     "icons": {
-      "16": "/images/16pLL.png",
-      "32": "/images/32pLL.png",
-      "48": "/images/48pLL.png",
-      "128": "/images/128pLL.png"
+      "16": "images/16pLL.png",
+      "32": "images/32pLL.png",
+      "48": "images/48pLL.png",
+      "128": "images/128pLL.png"
     },
     "background": {
-      "scripts": ["background.js"]
+      "service_worker": "background.js"
+    },
+    "minimum_chrome_version": "102",
+    "omnibox": {
+      "keyword": "api"
+    },
+    "action": {
+      "default_icon": { 
+        "16": "images/16pLL.png",
+        "32": "images/32pLL.png",
+        "48": "images/48pLL.png",
+        "128": "images/128pLL.png"
       },
-      "minimum_chrome_version": "102",
-      "omnibox": {
-        "keyword": "api"
-      },
-      "browser_action": {
-        "default_icon": { 
-          "16": "/images/16pLL.png",
-          "32": "/images/32pLL.png",
-          "48": "/images/48pLL.png",
-          "128": "/images/128pLL.png"
-        },
-        "default_popup": "popup.html"
-      },
-      "permissions": ["activeTab", "scripting", "contextMenus", "storage"],
-      "commands": {
-        "_execute_action": {
-          "suggested_key": {
-            "default": "Ctrl+B",
-            "mac": "Command+B"
-          }
+      "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab", "scripting", "contextMenus", "storage"],
+    "commands": {
+      "_execute_action": {
+        "suggested_key": {
+          "default": "Ctrl+B",
+          "mac": "Command+B"
         }
+      }
     }
-    
 }
